@@ -1,0 +1,15 @@
+{
+    "name": "kingkerneloficial/k-api",
+    "autoload": {
+        "psr-4": {
+            "DanielSantos\\KApi\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Daniel Santos",
+            "email": "danielsantos.prog.sp@gmail.com"
+        }
+    ],
+    "require": {}
+}
