@@ -1,11 +1,14 @@
 <?php
+use kingkernel\Commands\Execute;
 function checkCli(){
     if (PHP_SAPI !== 'cli') {
       return exit("Acesso negado: este script só pode rodar via CLI.\n");
     };
 }
 checkCli();
-if (!empty($argv[1]) && $argv[1] == 'serve') {
-  shell_exec('php -S 127.0.0.1:8000 -d index.php');
-};
+$command = new Execute($argv);
+// if (!empty($argv[1]) && $argv[1] == 'serve') {
+//   shell_exec('php -S 127.0.0.1:8000 -d index.php');
+// };
+$command->execute();
 

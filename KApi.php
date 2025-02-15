@@ -5,13 +5,15 @@ class KApi
 {
     public $route;
     public $paramString;
+    public $fullPath;
 
     public function __construct()
     {
-        $str_stringFull = str_replace('rota=index.php&rota=', '', $_SERVER['QUERY_STRING']);
+        $str_stringFull = $_SERVER['REQUEST_URI'];
         $paramsAPI = explode('/', $str_stringFull);
-        $this->route = $paramsAPI[0];
+        $this->route = $paramsAPI[1];
         $this->paramString = $paramsAPI[1] ?? '';
+        $this->fullPath = $str_stringFull;
         return $this;
 
     }
@@ -48,5 +50,11 @@ class KApi
     public function listen()
     {
         echo $this->route;
+    }
+    public function start()
+    {
+        print_r(explode('/', $this->fullPath));
+        echo "\n<br/>"; 
+        print_r($this->route);
     }
 }
