@@ -53,8 +53,14 @@ class Kapi
     }
     public function start()
     {
-        print_r(explode('/', $this->fullPath));
+        $controller = (explode('/', $this->fullPath));
+        print_r($controller[1]);
         echo "\n<br/>"; 
-        print_r($this->route);
+        echo __DIR__;
+        // print_r($this->route);
+    }
+    public function loadRoute()
+    {
+        $
     }
 }
