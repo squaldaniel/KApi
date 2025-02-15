@@ -6,4 +6,5 @@ require('vendor/autoload.php');
 use kingkernel\KApi;
 
 $api = new KApi;
-$api->listen();
+
+print_r($_SERVER['REQUEST_URI']);

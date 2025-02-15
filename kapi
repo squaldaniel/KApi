@@ -5,4 +5,7 @@ function checkCli(){
     };
 }
 checkCli();
+if (!empty($argv[1]) && $argv[1] == 'serve') {
+  shell_exec('php -S 127.0.0.1:8000 -d index.php');
+};
 

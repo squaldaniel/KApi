@@ -47,6 +47,6 @@ class KApi
     }
     public function listen()
     {
-        return '';
+        echo $this->route;
     }
 }
