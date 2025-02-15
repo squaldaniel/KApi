@@ -1,8 +1,8 @@
 {
-    "name": "kingkerneloficial/k-api",
+    "name": "kingkernel/kapi",
     "autoload": {
         "psr-4": {
-            "DanielSantos\\KApi\\": "src/"
+            "kingkernel\\": "./"
         }
     },
     "authors": [

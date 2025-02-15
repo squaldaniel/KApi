@@ -6,5 +6,5 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'DanielSantos\\KApi\\' => array($baseDir . '/src'),
+    'kingkernel\\' => array($baseDir . '/'),
 );

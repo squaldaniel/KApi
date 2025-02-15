@@ -1,5 +1,7 @@
 <?php
-class MicroApi 
+namespace kingkernel;
+
+class KApi
 {
     public $route;
     public $paramString;
@@ -23,24 +25,28 @@ class MicroApi
     }
     public function fetchJson($cn, $sql)
     {
-        $stm = $cn->query($sql);
-        $result = $stm->fetchAll(PDO::FETCH_ASSOC);
-        return json_encode($result);
+        // $stm = $cn->query($sql);
+        // $result = $stm->fetchAll(PDO::FETCH_ASSOC);
+        // return json_encode($result);
     }
     public function fetchArray($cn, $sql)
     {
-        $stm = $cn->query($sql);
-        $result = $stm->fetchAll(PDO::FETCH_ASSOC);
-        return $result;
+        // $stm = $cn->query($sql);
+        // $result = $stm->fetchAll(PDO::FETCH_ASSOC);
+        // return $result;
     }
     public function SourceDatatables(array $resultset)
     {
         $faseOne = [];
         foreach ($resultset as $key => $line) {
             $str_falseAray = '[' . implode(',', $line) . ']';
+
             array_push($faseOne, $str_falseAray);
         };
         return '[' . implode(',', $faseOne) . ']';
     }
+    public function listen()
+    {
+        return '';
+    }
 }
-$api = new MicroApi();
