@@ -1,7 +1,7 @@
 <?php
 namespace kingkernel;
 
-class KApi
+class Kapi
 {
     public $route;
     public $paramString;
