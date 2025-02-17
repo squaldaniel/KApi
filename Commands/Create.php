@@ -9,7 +9,7 @@ class Create
     public function helpMessage()
     {
         $className = $this->getClassName();
-        return __CLASS__ .' : Classe usada para criar objetos na aplicação.';
+        return __CLASS__ ." : Classe usada para criar objetos na aplicação.\n";
     }
     function getClassName()
     {
