@@ -57,6 +57,7 @@ class Kapi
         // print_r($controller[1]);
         // echo "\n<br/>"; 
         echo CONTROLLERS_DIR;
+        print_r(loadControllers());
         // print_r($this->route);
     }
     public function loadRoute()

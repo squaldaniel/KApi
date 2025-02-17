@@ -5,11 +5,21 @@ class Execute
     public $arguments;
     public function __construct($argv)
     {
-        $this->arguments = $argv;
+        $this->arguments = array_diff($argv, ['kapi']);
         return $this;
     }
     public function execute()
     {
-        print_r($this->arguments);
+        if(count($this->arguments) == 0)
+        {
+            return $this->help();
+        } else {
+            print_r($this->arguments);
+        }
+        
+    }
+    public function help()
+    {
+        echo 'exibir ajuda';
     }
 }

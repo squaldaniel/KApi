@@ -1,4 +1,6 @@
 <?php
+require('vendor/autoload.php');
+require('./config/functions.php');
 use kingkernel\Commands\Execute;
 function checkCli(){
     if (PHP_SAPI !== 'cli') {
