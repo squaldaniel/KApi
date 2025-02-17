@@ -1,6 +1,6 @@
 <?php
-use kingkernel\Commands\Execute
-use ;
+require( 'vendor/autoload.php');
+use kingkernel\Commands\Execute;
 function checkCli(){
     if (PHP_SAPI !== 'cli') {
       return exit("Acesso negado: este script só pode rodar via CLI.\n");

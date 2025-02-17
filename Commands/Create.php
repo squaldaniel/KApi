@@ -1,6 +1,6 @@
 <?php
 namespace kingkernel\Commands;
-class Create 
+class create 
 {
     public function __construct()
     {
@@ -9,7 +9,7 @@ class Create
     public function helpMessage()
     {
         $className = $this->getClassName();
-        return __CLASS__ ." : Classe usada para criar objetos na aplicação.\n";
+        return $className ." : Classe usada para criar objetos na aplicação.\n";
     }
     function getClassName()
     {
