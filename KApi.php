@@ -51,16 +51,20 @@ class Kapi
     {
         echo $this->route;
     }
-    public function start()
+    public function run()
     {
-        $controller = (explode('/', $this->fullPath));
-        print_r($controller[1]);
-        echo "\n<br/>"; 
-        echo __DIR__;
+        // $controller = (explode('/', $this->fullPath));
+        // print_r($controller[1]);
+        // echo "\n<br/>"; 
+        echo CONTROLLERS_DIR;
         // print_r($this->route);
     }
     public function loadRoute()
     {
-        $
+        
+    }
+    public function bootstrap()
+    {
+        require(__DIR__.'/config/functions.php');
     }
 }
