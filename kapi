@@ -1,5 +1,6 @@
 <?php
-use kingkernel\Commands\Execute;
+use kingkernel\Commands\Execute
+use ;
 function checkCli(){
     if (PHP_SAPI !== 'cli') {
       return exit("Acesso negado: este script só pode rodar via CLI.\n");

@@ -51,16 +51,27 @@ class Kapi
     {
         echo $this->route;
     }
-    public function start()
+    public function run()
     {
-        $controller = (explode('/', $this->fullPath));
-        print_r($controller[1]);
-        echo "\n<br/>"; 
-        echo __DIR__;
+        header('Content-Type: application/json');
+        $hello = [
+            'Aplication: '=>APP_NAME,
+            "Version: "=> APP_VERSION,
+            'data:'=> $this->loadRoute()
+        ];
+        // $controller = (explode('/', $this->fullPath));
+        // print_r($controller[1]);
+        // echo "\n<br/>"; 
+        // print_r($this->loadRoute());
         // print_r($this->route);
+        echo json_encode($hello);
     }
     public function loadRoute()
     {
-        $
+        return loadDir(APP_CONTROLLERS);
+    }
+    public function boostrap()
+    {
+        include(__DIR__.'/config/funcoes.php');
     }
 }

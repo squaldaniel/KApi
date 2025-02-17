@@ -1,11 +1,9 @@
 <?php
-/**
- * Micro api na pasta services
- */
 require('vendor/autoload.php');
+
 use kingkernel\Kapi;
 // inicializa a api
 $api = new Kapi;
+$api->boostrap();
 // inicializa a api
-$api->start();
-
+$api->run();
