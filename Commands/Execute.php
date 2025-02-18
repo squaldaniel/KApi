@@ -5,7 +5,7 @@ class Execute
     public $arguments;
     public function __construct($argv)
     {
-        $this->arguments = $argv;
+        $this->arguments = array_diff($argv, ['kapi']);
         return $this;
     }
     public function execute()
