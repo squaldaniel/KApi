@@ -9,7 +9,8 @@ class create
     public function helpMessage()
     {
         $className = $this->getClassName();
-        return $className ." : Classe usada para criar objetos na aplicação.\n";
+        return $className ." : Classe usada para criar objetos na aplicação,\n
+        como Controllers, models e responsers.\n";
     }
     function getClassName()
     {

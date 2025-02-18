@@ -20,7 +20,12 @@ class Execute
             $namespace = NAMESPACE_COMMANDS;
             $instabcia = $namespace.'\\'.$class;
             $comando = new $instabcia();
-            $comando->$fn($this->arguments[2]);
+            if(isset($this->arguments[2])){
+                $comando->$fn($this->arguments[2]);
+            } else {
+                echo $comando->helpMessage();
+            }
+            
             
         } else {
             echo 'exibir ajuda';

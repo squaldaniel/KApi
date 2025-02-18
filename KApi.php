@@ -1,6 +1,8 @@
 <?php
 namespace kingkernel;
 
+use kingkernel\App\Controllers\index\index;
+
 class Kapi
 {
     public $route;
@@ -53,8 +55,11 @@ class Kapi
     }
     public function run()
     {
-        if(file_exists(APP_CONTROLLERS.'/index/index.php')){
-            echo 'arquivo existe';
+        $route = $this->route;
+        if(file_exists(APP_CONTROLLERS.'/'.$route.'./'.$route.'.php')){
+            $namespace = NAMESPACE_CONTROLLERS.'\\'.$route.'\\'.$route;
+            // $classe = new $namespace();
+            print_r($namespace);
         } else{
             header('Content-Type: application/json');
             $hello = [
