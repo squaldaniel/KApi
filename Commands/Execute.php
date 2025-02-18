@@ -1,5 +1,7 @@
 <?php
 namespace kingkernel\Commands;
+
+use kingkernel\Commands\create;
 class Execute 
 {
     public $arguments;
@@ -10,6 +12,12 @@ class Execute
     }
     public function execute()
     {
-        print_r($this->arguments);
+        print_r($this->loadCommand($this->arguments[1]));
+    }
+    public function loadCommand($arguments)
+    {
+        $arrClass = explode(':', $arguments)[0];
+        $command = new $arrClass();
+        return $arrClass;
     }
 }
