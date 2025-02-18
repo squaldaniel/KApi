@@ -20,9 +20,7 @@ class Execute
             $namespace = NAMESPACE_COMMANDS;
             $instabcia = $namespace.'\\'.$class;
             $comando = new $instabcia();
-            print_r($this->arguments);
-            // $comando->$fn($this->arguments[2]);
-            // $command = new kingkernel\Commands\$params[0]();
+            $comando->$fn($this->arguments[2]);
             
         } else {
             echo 'exibir ajuda';

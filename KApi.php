@@ -53,18 +53,17 @@ class Kapi
     }
     public function run()
     {
-        header('Content-Type: application/json');
-        $hello = [
-            'Aplication: '=>APP_NAME,
-            "Version: "=> APP_VERSION,
-            'data:'=> $this->loadRoute()
-        ];
-        // $controller = (explode('/', $this->fullPath));
-        // print_r($controller[1]);
-        // echo "\n<br/>"; 
-        // print_r($this->loadRoute());
-        // print_r($this->route);
-        echo json_encode($hello);
+        if(file_exists(APP_CONTROLLERS.'/index/index.php')){
+            echo 'arquivo existe';
+        } else{
+            header('Content-Type: application/json');
+            $hello = [
+                'Aplication: '=>APP_NAME,
+                "Version: "=> APP_VERSION,
+                'data:'=> $this->loadRoute()
+            ];
+            echo json_encode($hello);
+        }
     }
     public function loadRoute()
     {
