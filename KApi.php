@@ -1,6 +1,8 @@
 <?php
 namespace kingkernel;
 
+use kingkernel\App\Controllers\index\index;
+
 class Kapi
 {
     public $route;
@@ -53,18 +55,20 @@ class Kapi
     }
     public function run()
     {
-        header('Content-Type: application/json');
-        $hello = [
-            'Aplication: '=>APP_NAME,
-            "Version: "=> APP_VERSION,
-            'data:'=> $this->loadRoute()
-        ];
-        // $controller = (explode('/', $this->fullPath));
-        // print_r($controller[1]);
-        // echo "\n<br/>"; 
-        // print_r($this->loadRoute());
-        // print_r($this->route);
-        echo json_encode($hello);
+        $route = $this->route;
+        if(file_exists(APP_CONTROLLERS.'/'.$route.'./'.$route.'.php')){
+            $namespace = NAMESPACE_CONTROLLERS.'\\'.$route.'\\'.$route;
+            // $classe = new $namespace();
+            print_r($namespace);
+        } else{
+            header('Content-Type: application/json');
+            $hello = [
+                'Aplication: '=>APP_NAME,
+                "Version: "=> APP_VERSION,
+                'data:'=> $this->loadRoute()
+            ];
+            echo json_encode($hello);
+        }
     }
     public function loadRoute()
     {
